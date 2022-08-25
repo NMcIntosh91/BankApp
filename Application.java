@@ -107,6 +107,8 @@ public class Application {
 				break;
 				
 			case 2:
+				Database.createAccount();
+				
 				break;
 				
 			case 3:
