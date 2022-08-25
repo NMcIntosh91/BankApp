@@ -3,6 +3,7 @@ package bankingapplication;
 public class DisplayHandler implements Menu {
 
 	EnglishDisplay englishDisplay = new EnglishDisplay();
+	DeutschDisplay germanDisplay = new DeutschDisplay();
 	protected Language lang;
 	
 	public DisplayHandler() {
@@ -22,60 +23,92 @@ public class DisplayHandler implements Menu {
 	
 	public void displayAccountBalance(Currency currency, double balance) {
 		
-		if (lang == Language.ENG) EnglishDisplay.displayAccountBalance(currency, balance);
+		if (lang == Language.ENG) englishDisplay.displayAccountBalance(currency, balance);
+		if (lang == Language.DEU) germanDisplay.displayAccountBalance(currency, balance);
 		displayGap();
 	}
 
 	public void displayAccountMenu() {
 		
 		if (lang == Language.ENG) englishDisplay.displayAccountMenu();
+		if (lang == Language.DEU) germanDisplay.displayAccountMenu();
 		displayGap();
 	}
 	
 	public void displayAccountNotFoundMessage() {
 	
 		if (lang == Language.ENG) englishDisplay.displayAccountNotFoundMessage();
+		if (lang == Language.DEU) germanDisplay.displayAccountNotFoundMessage();
 		displayGap();
 		
 	}
 	
 	public void displayAppWelcome(String bankName) {
 		
-		if (lang == Language.ENG) 	englishDisplay.displayAppWelcome(bankName);
+		if (lang == Language.ENG) englishDisplay.displayAppWelcome(bankName);
+		if (lang == Language.DEU) germanDisplay.displayAppWelcome(bankName);
+		displayGap();
+	}
+	
+	public void displayCreateUsernameMessage() {
+		
+		if (lang == Language.ENG) englishDisplay.displayCreateUsernameMessage();
+		if (lang == Language.DEU) germanDisplay.displayCreateUsernameMessage();
 		displayGap();
 	}
 	
 	public void displayLoggedOutMessage(String accountName) {
 		
 		if (lang == Language.ENG) 	englishDisplay.displayLoggedOutMessage(accountName);
+		if (lang == Language.DEU) 	germanDisplay.displayLoggedOutMessage(accountName);
 		displayGap();
 	}
 	
 	public void displayLoginMenu() {
 		
-		if (lang == Language.ENG) EnglishDisplay.displayCurrentLanugage();
-		displayGap();
-		if (lang == Language.ENG) 	englishDisplay.displayLoginMenu();
-		displayGap();
+		if (lang == Language.ENG) {
+			
+			englishDisplay.displayCurrentLanguage(); 
+			displayGap(); 
+			englishDisplay.displayLoginMenu();
+		}
+		if (lang == Language.DEU) {
+			
+			germanDisplay.displayCurrentLanguage(); 
+			displayGap(); 
+			germanDisplay.displayLoginMenu();
+		}
 	}
 	
 	public void displayQuitAppMessage() {
 		
 		if (lang == Language.ENG) englishDisplay.displayQuitAppMessage();
+		if (lang == Language.DEU) germanDisplay.displayQuitAppMessage();
 		
 	}
 	
 	public void displayStartMenu() {
 		
-		if (lang == Language.ENG) EnglishDisplay.displayCurrentLanugage();
-		displayGap();
-		if (lang == Language.ENG) 	englishDisplay.displayStartMenu();
-		displayGap();
+		if (lang == Language.ENG) {
+			
+			englishDisplay.displayCurrentLanguage(); 
+			displayGap(); 
+			englishDisplay.displayStartMenu();
+		}
+		
+		if (lang == Language.DEU) {
+			
+			germanDisplay.displayCurrentLanguage(); 
+			displayGap(); 
+			germanDisplay.displayStartMenu();
+		}
 	}
 	
 	public void displaySelectLanguageHeading() {
 		
-		if (lang == Language.ENG) 	englishDisplay.displaySelectLanguageHeading();
+		displayGap();
+		if (lang == Language.ENG) englishDisplay.displaySelectLanguageHeading();
+		if (lang == Language.DEU) germanDisplay.displaySelectLanguageHeading();
 		displayGap();
 		
 	}
@@ -93,14 +126,16 @@ public class DisplayHandler implements Menu {
 	public void displayWelcomeLoggedCustomer(String accountId, String accountName) {
 		
 		displayGap();
-		if (lang == Language.ENG) 	englishDisplay.displayWelcomeLoggedCustomer(accountId, accountName);
+		if (lang == Language.ENG) englishDisplay.displayWelcomeLoggedCustomer(accountId, accountName);
+		if (lang == Language.DEU) germanDisplay.displayWelcomeLoggedCustomer(accountId, accountName);
 		displayGap();
 		
 	}
 
 	public void displayWrongInputMessage() {
 			
-			if (lang == Language.ENG) 	englishDisplay.displayWrongInputMessage();
+			if (lang == Language.ENG) englishDisplay.displayWrongInputMessage();
+			if (lang == Language.DEU) germanDisplay.displayWrongInputMessage();
 			displayGap();
 		}
 
