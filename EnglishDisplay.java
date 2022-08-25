@@ -6,7 +6,7 @@ public class EnglishDisplay implements Menu {
 
 	static Scanner customerInput = new Scanner(System.in);
 	
-	public static void displayAccountBalance(Currency currency, double balance) {
+	public void displayAccountBalance(Currency currency, double balance) {
 		
 		System.out.println("Account Balance: " + balance + " " + currency);
 	}
@@ -33,7 +33,12 @@ public class EnglishDisplay implements Menu {
 		
 	}
 	
-	public static void displayCurrentLanugage() {
+	public void displayCreateUsernameMessage() {
+		
+		System.out.print("Please create new username: ");
+	}	
+	
+	public void displayCurrentLanguage() {
 			
 			System.out.print("Lang: " + Language.ENG + " ");
 	}
@@ -46,8 +51,8 @@ public class EnglishDisplay implements Menu {
 	}
 
 	public void displayLoggedOutMessage(String accountName) {
-		System.out.println(accountName + " has decided to log out. Good Bye");
 		
+		System.out.println(accountName + " has decided to log out. Good Bye");
 	}
 	
 	public void displayLoginMenu() {
@@ -62,6 +67,17 @@ public class EnglishDisplay implements Menu {
 		System.out.print("You have selected close this Application. Thank you and Goodbye!");
 	}
 	
+	public void displayStartMenu() {
+		
+		System.out.println("MAIN MENU");
+		DisplayHandler.menuBreaker();
+		System.out.println("1 - Login Account");
+		System.out.println("2 - Create Account");
+		System.out.println("3 - Display Account Names");
+		System.out.println("4 - Quit Application");
+		System.out.println("5 - Change Language");
+	}
+	
 	public void displaySelectLanguageHeading() {
 		
 		System.out.println("Please select your desired Language:");
@@ -74,17 +90,6 @@ public class EnglishDisplay implements Menu {
 			System.out.println(index + " - " + lang);
 		}
 	}
-
-	public void displayStartMenu() {
-			
-			System.out.println("MAIN MENU");
-			DisplayHandler.menuBreaker();
-			System.out.println("1 - Login Account");
-			System.out.println("2 - Create Account");
-			System.out.println("3 - Display Account Names");
-			System.out.println("4 - Quit Application");
-			System.out.println("5 - Change Language");
-		}
 	
 	public void displayWrongInputMessage() {
 		
@@ -95,5 +100,7 @@ public class EnglishDisplay implements Menu {
 	
 		System.out.println("Welcome Customer ID: " + cid + ". "+ name + "!");
 	
-	}	
+	}
+
+	
 }
